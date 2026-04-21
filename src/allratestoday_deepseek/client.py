@@ -8,7 +8,7 @@ from typing import Any, Literal, Optional
 import httpx
 
 DEFAULT_BASE_URL = "https://allratestoday.com/api"
-USER_AGENT = "allratestoday-deepseek/0.1.0"
+USER_AGENT = "allratestoday-deepseek/0.2.0"
 
 Period = Literal["1d", "7d", "30d", "1y"]
 
@@ -80,22 +80,19 @@ class AllRatesTodayClient:
         """GET /rate — single mid-market rate for a pair."""
         return self._get("/rate", {"source": source.upper(), "target": target.upper()})
 
-    def get_historical_rates(self, source: str, target: str, period: Period = "7d") -> dict[str, Any]:
-        """GET /historical-rates — time series over 1d/7d/30d/1y."""
-        return self._get(
-            "/historical-rates",
-            {"source": source.upper(), "target": target.upper(), "period": period},
-        )
-
     def list_symbols(self) -> dict[str, Any]:
         """GET /v1/symbols — supported currencies."""
         return self._get("/v1/symbols", {})
 
-    def get_news(self) -> dict[str, Any]:
-        """GET /news — latest financial news."""
-        return self._get("/news", {})
-
     # ---- Authenticated ----------------------------------------------------
+
+    def get_historical_rates(self, source: str, target: str, period: Period = "7d") -> dict[str, Any]:
+        """GET /historical-rates — time series over 1d/7d/30d/1y. Requires API key."""
+        return self._get(
+            "/historical-rates",
+            {"source": source.upper(), "target": target.upper(), "period": period},
+            require_auth=True,
+        )
 
     def get_rates(
         self,

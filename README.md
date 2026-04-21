@@ -49,11 +49,10 @@ Need finer control? Use the tool schemas directly with the OpenAI SDK pointed at
 |---|---|---|
 | `get_exchange_rate` | no | Current mid-market rate between two currencies. |
 | `convert_currency` | no | Convert an amount between two currencies at the live rate. |
-| `get_historical_rates` | no | Rate history over `1d`, `7d`, `30d`, or `1y`. |
+| `get_historical_rates` | yes | Rate history over `1d`, `7d`, `30d`, or `1y`. |
 | `list_currencies` | no | All supported currencies with codes, names, symbols. |
-| `get_financial_news` | no | Latest FX market news. |
 
-All tools use AllRatesToday's public endpoints. Set `ALLRATES_API_KEY` only if you want higher rate limits or multi-target lookups.
+Public tools (`get_exchange_rate`, `convert_currency`, `list_currencies`) work without a key. Set `ALLRATES_API_KEY` for historical data and multi-target queries.
 
 ## Environment variables
 

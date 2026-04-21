@@ -56,7 +56,8 @@ TOOLS: list[dict[str, Any]] = [
             "name": "get_historical_rates",
             "description": (
                 "Get historical exchange-rate data points for a currency pair over a period. "
-                "Periods: 1d (hourly), 7d (daily), 30d (daily), 1y (weekly). No API key required."
+                "Periods: 1d (hourly), 7d (daily), 30d (daily), 1y (weekly). "
+                "Requires an AllRatesToday API key (ALLRATES_API_KEY)."
             ),
             "parameters": {
                 "type": "object",
@@ -82,14 +83,6 @@ TOOLS: list[dict[str, Any]] = [
             "parameters": {"type": "object", "properties": {}, "additionalProperties": False},
         },
     },
-    {
-        "type": "function",
-        "function": {
-            "name": "get_financial_news",
-            "description": "Get the latest financial and currency-market news from major sources.",
-            "parameters": {"type": "object", "properties": {}, "additionalProperties": False},
-        },
-    },
 ]
 
 
@@ -109,8 +102,6 @@ def dispatch_tool(client: AllRatesTodayClient, name: str, arguments: str | dict[
             data = client.get_historical_rates(args["source"], args["target"], args.get("period", "7d"))
         elif name == "list_currencies":
             data = client.list_symbols()
-        elif name == "get_financial_news":
-            data = client.get_news()
         else:
             return json.dumps({"error": f"unknown tool: {name}"})
     except Exception as err:  # noqa: BLE001 — return errors to the model as content

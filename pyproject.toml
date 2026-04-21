@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "allratestoday-deepseek"
-version = "0.1.0"
+version = "0.2.0"
 description = "Plug real-time currency exchange rates into DeepSeek chat/agents via function calling — powered by the AllRatesToday API."
 readme = "README.md"
 license = { text = "MIT" }
