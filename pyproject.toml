@@ -1,0 +1,49 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "allratestoday-deepseek"
+version = "0.1.0"
+description = "Plug real-time currency exchange rates into DeepSeek chat/agents via function calling — powered by the AllRatesToday API."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+authors = [{ name = "AllRatesToday", email = "support@allratestoday.com" }]
+keywords = [
+    "deepseek",
+    "deepseek-api",
+    "function-calling",
+    "tool-use",
+    "currency",
+    "exchange-rate",
+    "forex",
+    "allratestoday",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Office/Business :: Financial",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "openai>=1.30.0",
+    "httpx>=0.25.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "ruff>=0.4"]
+
+[project.scripts]
+allratestoday-deepseek = "allratestoday_deepseek.cli:main"
+
+[project.urls]
+Homepage = "https://allratestoday.com"
+Source = "https://github.com/cahthuranag/allratestoday-deepseek"
+Issues = "https://github.com/cahthuranag/allratestoday-deepseek/issues"
+AllRatesToday = "https://allratestoday.com/developers"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/allratestoday_deepseek"]
