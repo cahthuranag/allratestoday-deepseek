@@ -16,8 +16,8 @@ DEFAULT_BASE_URL = "https://api.deepseek.com"
 SYSTEM_PROMPT = (
     "You are a helpful assistant with access to real-time currency exchange-rate tools "
     "backed by the AllRatesToday API. When a user asks about a current rate, a conversion, "
-    "historical rates, the list of supported currencies, or FX news, call the appropriate "
-    "tool rather than guessing. Always cite the rate and the currencies you used."
+    "historical rates, or the list of supported currencies, call the appropriate tool "
+    "rather than guessing. Always cite the rate and the currencies you used."
 )
 
 

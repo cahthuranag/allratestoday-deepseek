@@ -1,13 +1,15 @@
 # AllRatesToday × DeepSeek
 
-> Give DeepSeek chat and agents real-time access to currency exchange rates, historical data, and financial news — via function calling.
+English | [简体中文](./README-zh-CN.md)
+
+> Give DeepSeek chat and agents real-time access to currency exchange rates and historical data — via function calling.
 
 DeepSeek's Chat Completions API is OpenAI-compatible, so the same tool-calling mechanism works. This package ships ready-to-use tool schemas and a thin agent wrapper that lets DeepSeek answer questions like:
 
 - *"What's USD to EUR right now?"*
 - *"Convert 1000 GBP to JPY."*
 - *"How has USD/INR moved over the last 30 days?"*
-- *"What's happening in FX markets today?"*
+- *"List every supported currency."*
 
 Powered by the [AllRatesToday API](https://allratestoday.com) — 160+ currencies, mid-market rates from Reuters/Refinitiv, public endpoints that need no API key.
 
