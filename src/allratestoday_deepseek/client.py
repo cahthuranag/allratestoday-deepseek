@@ -8,7 +8,7 @@ from typing import Any, Literal, Optional
 import httpx
 
 DEFAULT_BASE_URL = "https://allratestoday.com/api"
-USER_AGENT = "allratestoday-deepseek/0.2.0"
+USER_AGENT = "allratestoday-deepseek/0.2.1"
 
 Period = Literal["1d", "7d", "30d", "1y"]
 
@@ -23,11 +23,11 @@ class AllRatesTodayError(RuntimeError):
 
 
 class AllRatesTodayClient:
-    """Minimal client for the public AllRatesToday endpoints.
+    """Minimal client for the AllRatesToday API.
 
-    The `/rate`, `/historical-rates`, `/v1/symbols`, and `/news` endpoints are
-    public and need no API key. The `/v1/rates` multi-target endpoint needs a
-    bearer token, passed via ``api_key`` or the ``ALLRATES_API_KEY`` env var.
+    Public endpoints (no API key required): `/rate`, `/v1/symbols`.
+    Authenticated endpoints (require a bearer token via ``api_key`` or the
+    ``ALLRATES_API_KEY`` env var): `/historical-rates`, `/v1/rates`.
     """
 
     def __init__(
