@@ -1,5 +1,7 @@
 # AllRatesToday × DeepSeek
 
+[![Powered by AllRatesToday](https://img.shields.io/badge/Powered%20by-AllRatesToday-orange.svg)](https://allratestoday.com)
+
 English | [简体中文](./README-zh-CN.md)
 
 > Give DeepSeek chat and agents real-time access to currency exchange rates and historical data — via function calling.
