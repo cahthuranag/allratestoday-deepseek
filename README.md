@@ -13,7 +13,7 @@ DeepSeek's Chat Completions API is OpenAI-compatible, so the same tool-calling m
 - *"How has USD/INR moved over the last 30 days?"*
 - *"List every supported currency."*
 
-Powered by the [AllRatesToday API](https://allratestoday.com) — 160+ currencies, mid-market rates from Reuters/Refinitiv, public endpoints that need no API key.
+Powered by the [AllRatesToday API](https://allratestoday.com) — 160+ currencies, mid-market rates from institutional interbank market data, public endpoints that need no API key.
 
 ## Install
 
